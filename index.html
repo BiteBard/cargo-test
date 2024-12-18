@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container my-4">
+      <h1 class="mb-4">Отслеживание грузов</h1>
+
+      <div class="error-message alert alert-danger d-none"></div>
+
+      <div class="mb-3">
+        <label for="filter" class="form-label">Фильтр по статусу:</label>
+        <select id="filter" class="form-select">
+          <option value="">Все</option>
+          <option value="Ожидает отправки">Ожидает отправки</option>
+          <option value="В пути">В пути</option>
+          <option value="Доставлен">Доставлен</option>
+        </select>
+      </div>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Номер</th>
+            <th>Название</th>
+            <th>Статус</th>
+            <th>Пункт отправления</th>
+            <th>Пункт назначения</th>
+            <th>Дата отправления</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody class="cargo-table"></tbody>
+      </table>
+
+      <h2 class="mt-5">Добавить новый груз</h2>
+      <form id="add-cargo-form">
+        <div class="mb-3">
+          <label class="form-label">Название груза:</label>
+          <input type="text" id="cargo-name" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Пункт отправления:</label>
+          <select id="cargo-origin" class="form-select">
+            <option value="">Выберите город</option>
+            <option value="Москва">Москва</option>
+            <option value="Санкт-Петербург">Санкт-Петербург</option>
+            <option value="Казань">Казань</option>
+            <option value="Екатеринбург">Екатеринбург</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Пункт назначения:</label>
+          <select id="cargo-destination" class="form-select">
+            <option value="">Выберите город</option>
+            <option value="Москва">Москва</option>
+            <option value="Санкт-Петербург">Санкт-Петербург</option>
+            <option value="Казань">Казань</option>
+            <option value="Екатеринбург">Екатеринбург</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Дата отправления:</label>
+          <input type="date" id="cargo-departure-date" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить груз</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
